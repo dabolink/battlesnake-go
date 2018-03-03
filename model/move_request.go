@@ -5,6 +5,15 @@ import (
 	"encoding/json"
 )
 
+var (
+	DIRECTIONS = []string{
+		"up",
+		"down",
+		"left",
+		"right",
+	}
+)
+
 type MoveRequest struct {
 	Food   PointList `json:"food"`
 	Height int       `json:"height"`
