@@ -2,7 +2,6 @@ package handlers
 
 import (
 	"encoding/json"
-	"fmt"
 	"log"
 	"net/http"
 	"os"
@@ -11,7 +10,6 @@ import (
 
 func respond(res http.ResponseWriter, obj interface{}) {
 	res.Header().Set("Content-Type", "application/json")
-	fmt.Print(obj)
 	json.NewEncoder(res).Encode(obj)
 	res.Write([]byte("\n"))
 }

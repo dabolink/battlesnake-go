@@ -42,6 +42,8 @@ func Move(res http.ResponseWriter, req *http.Request) {
 
 	move := service.DetermineBestMove(gameBoard, directions)
 
+	fmt.Println(move)
+
 	respond(res, model.MoveResponse{
 		Move: move,
 	})
