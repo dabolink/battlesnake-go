@@ -16,7 +16,7 @@ func (board *GameBoard) Print() {
 	for _, row := range board.BoardValues {
 		fmt.Println()
 		for _, tile := range row {
-			fmt.Print(tile)
+			fmt.Print(tile.Value, " ")
 		}
 	}
 	fmt.Println()
