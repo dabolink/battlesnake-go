@@ -2,6 +2,7 @@ package model
 
 import (
 	"fmt"
+	"log"
 )
 
 type GameBoard struct {
@@ -12,11 +13,9 @@ type GameBoard struct {
 }
 
 func (board *GameBoard) Print() {
-	fmt.Println(board.Width, board.Height)
 	for _, row := range board.BoardValues {
-		fmt.Println()
 		for _, tile := range row {
-			fmt.Print(tile)
+			log.Print(tile)
 		}
 	}
 }
