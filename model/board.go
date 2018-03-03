@@ -19,6 +19,7 @@ func (board *GameBoard) Print() {
 			fmt.Print(tile)
 		}
 	}
+	fmt.Println()
 }
 func (board GameBoard) GetTileAt(x int, y int) *BoardTile {
 	if x < 0 || board.Width <= x {
@@ -131,7 +132,6 @@ func addGradientAtTile(board *GameBoard, point Point, value int) {
 			if tile != nil {
 				val := calcValue(point, x, y, value)
 				tile.Value = tile.Value + val
-				fmt.Println(val)
 			}
 		}
 	}
