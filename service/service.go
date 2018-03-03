@@ -1,6 +1,9 @@
 package service
 
-import "github.com/dabolink/battlesnake-go/model"
+import (
+	"fmt"
+	"github.com/dabolink/battlesnake-go/model"
+)
 
 func DetermineBestMove(board *model.GameBoard, directions model.Directions) string {
 	point := directions.CurrentLocation
@@ -26,21 +29,25 @@ func DetermineBestMove(board *model.GameBoard, directions model.Directions) stri
 	bestValue := -9999999999999
 
 	if directions.Up {
+		fmt.Println("up", northTile.Value)
 		if northTile.Value > bestValue {
 			bestDirection = model.UP
 			bestValue = northTile.Value
 		}
 	} else if directions.Down {
+		fmt.Println("down", southTile.Value)
 		if southTile.Value > bestValue {
 			bestDirection = model.DOWN
 			bestValue = southTile.Value
 		}
 	} else if directions.Left {
+		fmt.Println("left", westTile.Value)
 		if westTile.Value > bestValue {
 			bestDirection = model.LEFT
 			bestValue = westTile.Value
 		}
 	} else if directions.Right {
+		fmt.Println("right", eastTile.Value)
 		if eastTile.Value > bestValue {
 			bestDirection = model.RIGHT
 			bestValue = eastTile.Value
